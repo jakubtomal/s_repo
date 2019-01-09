@@ -6,7 +6,8 @@ a = dane_statkow()
 
 print(a.mt);
 
-b=statek(a.mt)
+b=statek(a.cm)
+g=statek(a.mt)
 
 print(b.atak)
 
@@ -14,4 +15,4 @@ c = flota('flota1.txt')
 
 print(c.lm)
 
-b.strzel(b)
+b.strzel(g)

@@ -1,5 +1,6 @@
 
 #szybkie_dziala =[ [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [3,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,6,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,2] , [250,250,200,100,33,30,250,250,1250,25,5,1,15] ,[3,3,1,4,4,7,1,1,5,1,1,1,1] ]
+from random import randint
 
 plik_sd = open('szybkie_dziala.txt' , 'r' )
 lista_sd = []
@@ -16,7 +17,7 @@ class statek():
         self.oslona = Tab[2]
         self.atak = Tab[3]
         
-    def strzel(self,statk2):
+    def strzel(self,statek2):
         
         statek_dziala = {'mt' : 0 , 'dt' : 1 , 'lm' : 2 
                          , 'cm' : 3 , 'kr' : 4 , 'ow' : 5 
@@ -24,7 +25,12 @@ class statek():
                          , 'bb' : 9 , 'ns' : 10 , 'gs' : 11 
                          , 'pa' : 12 }
         
-        print(statek_dziala['ns'])
+        szansa = 100 * (1 - 1/float(lista_sd[statek_dziala[self.name]][statek_dziala[statek2.name]]))
+        
+        if randint(0,100) <= szansa:
+            print('tak')
+        else:
+            print('nie')
         
         
         
