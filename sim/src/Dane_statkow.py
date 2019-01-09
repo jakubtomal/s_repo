@@ -4,9 +4,8 @@ class dane_statkow:
         
         tmplist=[]
         file1 = open('Dane_statkow.txt' , 'r')
-        file1.readline()
         for i in file1:
-            tmplist.append(i[3:-1].split(','))
+            tmplist.append(i[:-1].split(','))
         file1.close()
             
         self.mt = tmplist[0]

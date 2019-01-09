@@ -14,4 +14,4 @@ c = flota('flota1.txt')
 
 print(c.lm)
 
-
+b.strzel(b)
