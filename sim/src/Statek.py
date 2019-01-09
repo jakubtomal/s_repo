@@ -13,9 +13,9 @@ for i in plik_sd:
 class statek():
     def __init__(self ,  Tab):
         self.name = Tab[0]
-        self.pancerz = Tab[1]
-        self.oslona = Tab[2]
-        self.atak = Tab[3]
+        self.pancerz = float(Tab[1])
+        self.oslona = float(Tab[2])
+        self.atak = float(Tab[3])
         
     def strzel(self,statek2):
         
@@ -28,9 +28,16 @@ class statek():
         szansa = 100 * (1 - 1/float(lista_sd[statek_dziala[self.name]][statek_dziala[statek2.name]]))
         
         if randint(0,100) <= szansa:
-            print('tak')
+            return True
         else:
-            print('nie')
+            return False
+        
+    def trafiony(self , statek2):
+        print(statek2.atak / self.oslona)
+        if ( statek2.atak / self.oslona) < 0.1:
+            print('nie strzela')
+        else:
+            print ('strzela')
         
         
         
