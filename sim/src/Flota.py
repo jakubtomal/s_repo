@@ -3,7 +3,7 @@ Created on 19 lis 2018
 
 @author: dredi
 '''
-class Flota():
+class flota():
     def __init__(self , nazwa_pliku):
         plik = open(nazwa_pliku , 'r')
         tmplist = []
