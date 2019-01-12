@@ -1,5 +1,4 @@
 
-#szybkie_dziala =[ [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [3,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,6,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,1] , [1,1,1,1,1,1,1,1,5,1,1,1,2] , [250,250,200,100,33,30,250,250,1250,25,5,1,15] ,[3,3,1,4,4,7,1,1,5,1,1,1,1] ]
 from random import randint
 
 plik_sd = open('szybkie_dziala.txt' , 'r' )
@@ -33,11 +32,11 @@ class statek():
             return False
         
     def trafiony(self , statek2):
-        print(statek2.atak / self.oslona)
         if ( statek2.atak / self.oslona) < 0.1:
-            print('nie strzela')
+            return False
         else:
-            print ('strzela')
+            #if self.pancerz/
+            return True
         
         
         
