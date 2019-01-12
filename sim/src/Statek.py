@@ -49,7 +49,6 @@ class statek():
         
         if self.oslona > 0:
             if ( statek2.atak / self.oslona) < 0.1:
-                print("pudlo")
                 return False #statek2 nie trafil
         
         obrazenia = statek2.atak
