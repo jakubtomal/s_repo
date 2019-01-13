@@ -29,7 +29,7 @@ class statek():
         self.atak = float(Tab[3])
         
     def strzel(self,statek2):
-        ''' Funkcja sprawdzająca czy statek będzie mogl ponownie strzelic  '''
+        ''' Funkcja sprawdzajaca czy statek bedzie mogl ponownie strzelic  '''
         
         statek_dziala = {'mt' : 0 , 'dt' : 1 , 'lm' : 2 
                          , 'cm' : 3 , 'kr' : 4 , 'ow' : 5 
