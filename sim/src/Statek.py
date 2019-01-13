@@ -69,6 +69,17 @@ class statek():
         else:
             return False #statek nie zostal zniszczony
         
+    def zniszczony(self):
+        '''funkcja zwracajaca True jezeli statek zostal zniszczony lub False jeżeli nie zostal'''
+        if self.pancerz <= 0 :
+            return True
+        else:
+            return False
+        
+    def statystyki(self):
+        ''' funkcja wypisujaca statystyki statku '''
+        print("nazwa:" + self.name + " pancerz:" + str(int(self.pancerz)) + " oslona:" + str(int(self.oslona)) + " atak:" + str(int(self.atak)))
+             
         
         
 
