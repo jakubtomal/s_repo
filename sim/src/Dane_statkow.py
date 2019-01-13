@@ -20,5 +20,49 @@ class dane_statkow:
     ns = tmplist[10]
     gs = tmplist[11]
     pa = tmplist[12]
+    
+    @staticmethod
+    def pobierz_info(x):
+        '''Statyczna metoda zwracajaca tablice statystyk po podaniu skrotu statku'''
+        if x == 'mt':
+            return dane_statkow.mt
+        
+        elif x == 'dt':
+            return dane_statkow.dt
+        
+        elif x == 'lm':
+            return dane_statkow.lm
+        
+        elif x == 'cm':
+            return dane_statkow.cm
+        
+        elif x == 'kr':
+            return dane_statkow.kr
+        
+        elif x == 'ow':
+            return dane_statkow.ow
+        
+        elif x == 'sk':
+            return dane_statkow.sk
+        
+        elif x == 're':
+            return dane_statkow.re
+        
+        elif x == 'ss':
+            return dane_statkow.ss
+        
+        elif x == 'bb':
+            return dane_statkow.bb
+        
+        elif x == 'ns':
+            return dane_statkow.ns
+        
+        elif x == 'gs':
+            return dane_statkow.gs
+        
+        elif x == 'pa':
+            return dane_statkow.pa
+        
+        
         
 
