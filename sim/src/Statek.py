@@ -15,17 +15,13 @@ class statek():
     def __init__(self ,  Tab):
         '''klasa statek : 
         name(str): skrot nazwy statku, 
-        pancerz(float): aktualny pancerz statku,
-        pancerz_max(float): pancerz nie uszkodzonego statku
+        pancerz(float): aktualny pancerz statku,sd
         oslona(float): aktualna oslona statku
-        oslona_max(float): oslona nie uszkodzonego statku
         atak(float): obrazenia jakie zadaje statek 
         '''
         self.name = Tab[0]
         self.pancerz = float(Tab[1])
-        self.pancerz_max = float(Tab[1])
         self.oslona = float(Tab[2])
-        self.oslona_max = float(Tab[2])
         self.atak = float(Tab[3])
         
     def strzel(self,statek2):
@@ -62,9 +58,9 @@ class statek():
             if self.pancerz <= 0:
                 self.pancerz = 0
                 
-        if self.pancerz < (self.pancerz_max * 0.7): 
-            szansa_wybuch = 100 *( 1 - (self.pancerz / self.pancerz_max)) #szansa na to ze statek wybuchnie
-            if randint(0,100) <= szansa_wybuch:
+        if self.pancerz < float(dane_statkow.pobierz_info(self.name)[1]) * 0.7: 
+            szansa_wybuch = 100 *( 1 - (self.pancerz / float(dane_statkow.pobierz_info(self.name)[1]))) #szansa na to ze statek wybuchnie
+            if randint(0,100) <= szansa_wybuch :
                 self.pancerz = 0
                 return True #statek zostal zniszczony
             
