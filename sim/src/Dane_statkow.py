@@ -22,47 +22,129 @@ class dane_statkow:
     pa = tmplist[12]
     
     @staticmethod
-    def pobierz_info(x):
-        '''Statyczna metoda zwracajaca tablice statystyk po podaniu skrotu statku'''
+    def pancerz(x):
+        '''Statyczna metoda zwracajaca pancerz po podaniu skrotu statku'''
         if x == 'mt':
-            return dane_statkow.mt
+            return dane_statkow.mt[1]
         
         elif x == 'dt':
-            return dane_statkow.dt
+            return dane_statkow.dt[1]
         
         elif x == 'lm':
-            return dane_statkow.lm
+            return dane_statkow.lm[1]
         
         elif x == 'cm':
-            return dane_statkow.cm
+            return dane_statkow.cm[1]
         
         elif x == 'kr':
-            return dane_statkow.kr
+            return dane_statkow.kr[1]
         
         elif x == 'ow':
-            return dane_statkow.ow
+            return dane_statkow.ow[1]
         
         elif x == 'sk':
-            return dane_statkow.sk
+            return dane_statkow.sk[1]
         
         elif x == 're':
-            return dane_statkow.re
+            return dane_statkow.re[1]
         
         elif x == 'ss':
-            return dane_statkow.ss
+            return dane_statkow.ss[1]
         
         elif x == 'bb':
-            return dane_statkow.bb
+            return dane_statkow.bb[1]
         
         elif x == 'ns':
-            return dane_statkow.ns
+            return dane_statkow.ns[1]
         
         elif x == 'gs':
-            return dane_statkow.gs
+            return dane_statkow.gs[1]
         
         elif x == 'pa':
-            return dane_statkow.pa
+            return dane_statkow.pa[1]
         
+    @staticmethod
+    def oslona(x):
+        '''Statyczna metoda zwracajaca oslone po podaniu skrotu statku'''
+        if x == 'mt':
+            return dane_statkow.mt[2]
         
+        elif x == 'dt':
+            return dane_statkow.dt[2]
         
+        elif x == 'lm':
+            return dane_statkow.lm[2]
+        
+        elif x == 'cm':
+            return dane_statkow.cm[2]
+        
+        elif x == 'kr':
+            return dane_statkow.kr[2]
+        
+        elif x == 'ow':
+            return dane_statkow.ow[2]
+        
+        elif x == 'sk':
+            return dane_statkow.sk[2]
+        
+        elif x == 're':
+            return dane_statkow.re[2]
+        
+        elif x == 'ss':
+            return dane_statkow.ss[2]
+        
+        elif x == 'bb':
+            return dane_statkow.bb[2]
+        
+        elif x == 'ns':
+            return dane_statkow.ns[2]
+        
+        elif x == 'gs':
+            return dane_statkow.gs[2]
+        
+        elif x == 'pa':
+            return dane_statkow.pa[2]
+        
+    @staticmethod
+    def atak(x):
+        '''Statyczna metoda zwracajaca atak po podaniu skrotu statku'''
+        if x == 'mt':
+            return dane_statkow.mt[3]
+        
+        elif x == 'dt':
+            return dane_statkow.dt[3]
+        
+        elif x == 'lm':
+            return dane_statkow.lm[3]
+        
+        elif x == 'cm':
+            return dane_statkow.cm[3]
+        
+        elif x == 'kr':
+            return dane_statkow.kr[3]
+        
+        elif x == 'ow':
+            return dane_statkow.ow[3]
+        
+        elif x == 'sk':
+            return dane_statkow.sk[3]
+        
+        elif x == 're':
+            return dane_statkow.re[3]
+        
+        elif x == 'ss':
+            return dane_statkow.ss[3]
+        
+        elif x == 'bb':
+            return dane_statkow.bb[3]
+        
+        elif x == 'ns':
+            return dane_statkow.ns[3]
+        
+        elif x == 'gs':
+            return dane_statkow.gs[3]
+        
+        elif x == 'pa':
+            return dane_statkow.pa[3]
+    
 
