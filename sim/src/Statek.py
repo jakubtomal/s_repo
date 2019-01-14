@@ -12,7 +12,7 @@ for i in plik_sd:
 
 
 class statek():
-    def __init__(self ,  Tab):
+    def __init__(self ,  Tab , ochronna = 1 , opancerzenie = 1 , bojowa = 1 ):
         '''klasa statek : 
         name(str): skrot nazwy statku, 
         pancerz(float): aktualny pancerz statku,sd
@@ -20,9 +20,10 @@ class statek():
         atak(float): obrazenia jakie zadaje statek 
         '''
         self.name = Tab[0]
-        self.pancerz = float(Tab[1])
-        self.oslona = float(Tab[2])
-        self.atak = float(Tab[3])
+        self.pancerz = float(Tab[1]) * opancerzenie
+        self.oslona = float(Tab[2]) * ochronna
+        self.atak = float(Tab[3]) * bojowa
+        self.opancerzenie = opancerzenie
         
     def strzel(self,statek2):
         ''' Funkcja sprawdzajaca czy statek bedzie mogl ponownie strzelic  '''
@@ -58,8 +59,8 @@ class statek():
             if self.pancerz <= 0:
                 self.pancerz = 0
                 
-        if self.pancerz < float(dane_statkow.pobierz_info(self.name)[1]) * 0.7: 
-            szansa_wybuch = 100 *( 1 - (self.pancerz / float(dane_statkow.pobierz_info(self.name)[1]))) #szansa na to ze statek wybuchnie
+        if self.pancerz < float(dane_statkow.pancerz(self.name)) * self.opancerzenie * 0.7: 
+            szansa_wybuch = 100 *( 1 - (self.pancerz / float(dane_statkow.pancerz(self.name)) * self.opancerzenie)) #szansa na to ze statek wybuchnie
             if randint(0,100) <= szansa_wybuch :
                 self.pancerz = 0
                 return True #statek zostal zniszczony
@@ -70,7 +71,7 @@ class statek():
             return False #statek nie zostal zniszczony
         
     def zniszczony(self):
-        '''funkcja zwracajaca True jezeli statek zostal zniszczony lub False jeżeli nie zostal'''
+        '''funkcja zwracajaca True jezeli statek zostal zniszczony lub False jezeli nie zostal'''
         if self.pancerz <= 0 :
             return True
         else:
