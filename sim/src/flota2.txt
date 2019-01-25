@@ -8,6 +8,6 @@ sk:0
 re:0
 ss:0
 bb:0
-ns:0
-gs:2
+ns:100
+gs:0
 pa:0.

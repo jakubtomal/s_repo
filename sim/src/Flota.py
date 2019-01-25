@@ -48,7 +48,7 @@ class flota():
             self.flota.append(statek( dane_statkow.dt , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.lm):
-            self.flota.append(statek( dane_statkow.lm , self.ochronna , self.opancerzenie , self.ojowa ))
+            self.flota.append(statek( dane_statkow.lm , self.ochronna , self.opancerzenie , self.bojowa ))
         
         for i in range(0,self.cm):
             self.flota.append(statek( dane_statkow.cm , self.ochronna , self.opancerzenie , self.bojowa ))

@@ -10,7 +10,7 @@ from matplotlib.cbook import Null
 
 app = gui("Symulator Ogame","fullscreen")
 #app.setSize(600,800)
-app.setBg("blue")
+app.setBg("white")
 app.setFont(10)
 
 def press(button):
@@ -19,37 +19,202 @@ def press(button):
     else:
         plik1 = open('flota1.txt' , 'w')
         plik2 = open('flota2.txt' , 'w')
-    
-        plik1.write('mt:'+app.getEntry("maly transporter")+"\n"+
-                    'dt:'+app.getEntry("duzy transporter")+"\n"+
-                    'lm:'+app.getEntry("lekki mysliwiec")+"\n"+
-                    'cm:'+app.getEntry("ciezki mysliwiec")+"\n"+
-                    'kr:'+app.getEntry("krazowkik")+"\n"+
-                    'ow:'+app.getEntry("okret wojenny")+"\n"+
-                    'sk:'+app.getEntry("statek kolonizacyjny")+"\n"+
-                    're:'+app.getEntry("recykler")+"\n"+
-                    'ss:'+app.getEntry("sada szpiegowska")+"\n"+
-                    'bb:'+app.getEntry("babowiec")+"\n"+
-                    'ns:'+app.getEntry("niszczyciel")+"\n"+
-                    'gs:'+app.getEntry("gwiazda smierci")+"\n"+
-                    'pa:'+app.getEntry("pancernik")+".")
-        plik1.close()
+        plik3 = open('technologie1' , 'w')
+        plik4 = open('technologie2' , 'w')
         
-        plik2.write('mt:'+app.getEntry("maly transporter.")+"\n"+
-                    'dt:'+app.getEntry("duzy transporter.")+"\n"+
-                    'lm:'+app.getEntry("lekki mysliwiec.")+"\n"+
-                    'cm:'+app.getEntry("ciezki mysliwiec.")+"\n"+
-                    'kr:'+app.getEntry("krazowkik.")+"\n"+
-                    'ow:'+app.getEntry("okret wojenny.")+"\n"+
-                    'sk:'+app.getEntry("statek kolonizacyjny.")+"\n"+
-                    're:'+app.getEntry("recykler.")+"\n"+
-                    'ss:'+app.getEntry("sada szpiegowska.")+"\n"+
-                    'bb:'+app.getEntry("babowiec.")+"\n"+
-                    'ns:'+app.getEntry("niszczyciel.")+"\n"+
-                    'gs:'+app.getEntry("gwiazda smierci.")+"\n"+
-                    'pa:'+app.getEntry("pancernik.")+".")
+        if app.getEntry("maly transporter") == '':
+            mt = '0';
+        else:
+            mt = app.getEntry("maly transporter")
+        
+        if app.getEntry("duzy transporter") == '':
+            dt = '0';
+        else:
+            dt = app.getEntry("duzy transporter")
+            
+        if app.getEntry("lekki mysliwiec") == '':
+            lm = '0';
+        else:
+            lm = app.getEntry("lekki mysliwiec")
+            
+        if app.getEntry("ciezki mysliwiec") == '':
+            cm = '0';
+        else:
+            cm = app.getEntry("ciezki mysliwiec")
+            
+        if app.getEntry("krazownik") == '':
+            kr = '0';
+        else:
+            kr = app.getEntry("krazownik")
+            
+        if app.getEntry("okret wojenny") == '':
+            ow = '0';
+        else:
+            ow = app.getEntry("okret wojenny")
+            
+        if app.getEntry("statek kolonizacyjny") == '':
+            sk = '0';
+        else:
+            sk = app.getEntry("statek kolonizacyjny")
+            
+        if app.getEntry("recykler") == '':
+            re = '0';
+        else:
+            re = app.getEntry("recykler")
+            
+        if app.getEntry("sada szpiegowska") == '':
+            ss = '0';
+        else:
+            ss = app.getEntry("sada szpiegowska")
+            
+        if app.getEntry("babowiec") == '':
+            bb = '0';
+        else:
+            bb = app.getEntry("babowiec")
+            
+        if app.getEntry("niszczyciel") == '':
+            ns = '0';
+        else:
+            ns = app.getEntry("niszczyciel")
+            
+        if app.getEntry("gwiazda smierci") == '':
+            gs = '0';
+        else:
+            gs = app.getEntry("gwiazda smierci")
+            
+        if app.getEntry("pancernik") == '':
+            pa = '0';
+        else:
+            pa = app.getEntry("pancernik")
+            
+        if app.getEntry("technologia bojowa") == '':
+            tb1 = '1';
+        else:
+            tb1 = app.getEntry("technologia bojowa")
+        if app.getEntry("opancerzenie") == '':
+            op1 = '1';
+        else:
+            op1 = app.getEntry("opancerzenie")
+        if app.getEntry("technologia ochronna") == '':
+            to1 = '1';
+        else:
+            to1 = app.getEntry("technologia ochronna")
+            
+
+        
+        
+    
+        plik1.write('mt:'+mt+"\n"+
+                    'dt:'+dt+"\n"+
+                    'lm:'+lm+"\n"+
+                    'cm:'+cm+"\n"+
+                    'kr:'+kr+"\n"+
+                    'ow:'+ow+"\n"+
+                    'sk:'+sk+"\n"+
+                    're:'+re+"\n"+
+                    'ss:'+ss+"\n"+
+                    'bb:'+bb+"\n"+
+                    'ns:'+ns+"\n"+
+                    'gs:'+gs+"\n"+
+                    'pa:'+pa+".")
+        plik1.close()
+        plik3.write(to1+'\n'+op1+'\n'+tb1+'\n')
+        plik3.close()
+        
+        if app.getEntry("maly transporter.") == '':
+            mt = '0';
+        else:
+            mt = app.getEntry("maly transporter.")
+        
+        if app.getEntry("duzy transporter.") == '':
+            dt = '0';
+        else:
+            dt = app.getEntry("duzy transporter.")
+            
+        if app.getEntry("lekki mysliwiec.") == '':
+            lm = '0';
+        else:
+            lm = app.getEntry("lekki mysliwiec.")
+            
+        if app.getEntry("ciezki mysliwiec.") == '':
+            cm = '0';
+        else:
+            cm = app.getEntry("ciezki mysliwiec.")
+            
+        if app.getEntry("krazownik.") == '':
+            kr = '0';
+        else:
+            kr = app.getEntry("krazownik.")
+            
+        if app.getEntry("okret wojenny.") == '':
+            ow = '0';
+        else:
+            ow = app.getEntry("okret wojenny.")
+            
+        if app.getEntry("statek kolonizacyjny.") == '':
+            sk = '0';
+        else:
+            sk = app.getEntry("statek kolonizacyjny.")
+            
+        if app.getEntry("recykler.") == '':
+            re = '0';
+        else:
+            re = app.getEntry("recykler.")
+            
+        if app.getEntry("sada szpiegowska.") == '':
+            ss = '0';
+        else:
+            ss = app.getEntry("sada szpiegowska.")
+            
+        if app.getEntry("babowiec.") == '':
+            bb = '0';
+        else:
+            bb = app.getEntry("babowiec.")
+            
+        if app.getEntry("niszczyciel.") == '':
+            ns = '0';
+        else:
+            ns = app.getEntry("niszczyciel.")
+            
+        if app.getEntry("gwiazda smierci.") == '':
+            gs = '0';
+        else:
+            gs = app.getEntry("gwiazda smierci.")
+            
+        if app.getEntry("pancernik.") == '':
+            pa = '0';
+        else:
+            pa = app.getEntry("pancernik.")
+        if app.getEntry("technologia bojowa.") == '':
+            tb2 = '1';
+        else:
+            tb2 = app.getEntry("technologia bojowa.")
+        if app.getEntry("opancerzenie.") == '':
+            op2 = '1';
+        else:
+            op2 = app.getEntry("opancerzenie.")
+        if app.getEntry("technologia ochronna.") == '':
+            to2 = '1';
+        else:
+            to2 = app.getEntry("technologia ochronna.")
+        
+        plik2.write('mt:'+mt+"\n"+
+                    'dt:'+dt+"\n"+
+                    'lm:'+lm+"\n"+
+                    'cm:'+cm+"\n"+
+                    'kr:'+kr+"\n"+
+                    'ow:'+ow+"\n"+
+                    'sk:'+sk+"\n"+
+                    're:'+re+"\n"+
+                    'ss:'+ss+"\n"+
+                    'bb:'+bb+"\n"+
+                    'ns:'+ns+"\n"+
+                    'gs:'+gs+"\n"+
+                    'pa:'+pa+".")
         
         plik2.close()
+        plik4.write(to2+'\n'+op2+'\n'+tb2+'\n')
+        plik4.close()
         
         app.stop()
 
@@ -71,8 +236,8 @@ app.addLabelEntry("lekki mysliwiec")
 app.setEntryDefault("lekki mysliwiec", "0")
 app.addLabelEntry("ciezki mysliwiec")
 app.setEntryDefault("ciezki mysliwiec", "0")
-app.addLabelEntry("krazowkik")
-app.setEntryDefault("krazowkik", "0")
+app.addLabelEntry("krazownik")
+app.setEntryDefault("krazownik", "0")
 app.addLabelEntry("okret wojenny")
 app.setEntryDefault("okret wojenny", "0")
 app.addLabelEntry("statek kolonizacyjny")
@@ -107,8 +272,8 @@ app.addLabelEntry("lekki mysliwiec.")
 app.setEntryDefault("lekki mysliwiec.", "0")
 app.addLabelEntry("ciezki mysliwiec.")
 app.setEntryDefault("ciezki mysliwiec.", "0")
-app.addLabelEntry("krazowkik.")
-app.setEntryDefault("krazowkik.", "0")
+app.addLabelEntry("krazownik.")
+app.setEntryDefault("krazownik.", "0")
 app.addLabelEntry("okret wojenny.")
 app.setEntryDefault("okret wojenny.", "0")
 app.addLabelEntry("statek kolonizacyjny.")
@@ -136,7 +301,20 @@ app.go()
 
 
 
-def symuluj(n , flotaA , flotaB):
+def symuluj(n , flotaA , flotaB ):
+    
+    tech1 = open('technologie1' , 'r')
+    tech2 = open('technologie2' , 'r')
+    t1 = []
+    t2 = []
+    
+    for i in tech1:
+        t1.append(int(i[-2]))
+    tech1.close()
+    
+    for i in tech2:
+        t2.append(int(i[-2]))
+    tech2.close()
     
     runda = 1   
     tmp1 = flota('flota_sum1.txt')
@@ -145,14 +323,14 @@ def symuluj(n , flotaA , flotaB):
 
     
     for i in range(n):
-        flota2 = flota(flotaB)
-        flota1= flota(flotaA)
+        flota2 = flota(flotaB , t1[0] , t1[1] , t1[2] )
+        flota1= flota(flotaA , t2[0] , t2[1] , t2[2] )
         flota2.stworz()
         flota1.stworz()
         
         while runda <= 6:
-            flota1.atakuj(flota2)
-            flota2.atakuj(flota1)
+            flota1.atakuj(flota2 )
+            flota2.atakuj(flota1 )
             flota1.wyczysc()
             flota2.wyczysc()
             if flota1.istnieje() == False and flota2.istnieje() == False :
@@ -169,12 +347,12 @@ def symuluj(n , flotaA , flotaB):
                 
             runda += 1
             
+        runda = 0    
+        for k in flota1.flota:
+            tmp1.dadaj(k.name, 1)
             
-        for i in flota1.flota:
-            tmp1.dadaj(i.name, 1)
-            
-        for i in flota2.flota:
-            tmp2.dadaj(i.name, 1)
+        for k in flota2.flota:
+            tmp2.dadaj(k.name, 1)
             
     tmp1.mt = tmp1.mt / n
     tmp1.dt = tmp1.dt / n
@@ -211,25 +389,31 @@ def symuluj(n , flotaA , flotaB):
     tmp2.stworz()
     
     if tmp1.istnieje() == False and tmp2.istnieje() == False :
-        print('!!!! REMIS !!!!')
+        wynik ='!!!! REMIS !!!!'
 
     elif tmp1.istnieje() == False :
-        print('WYGRYWA FLOTA2')
+        wynik = 'WYGRYWA FLOTA2'
     
     elif tmp2.istnieje() == False :
-        print('WYGRYWA FLOTA1')
+        wynik = 'WYGRYWA FLOTA1'
     
     else:
-        print('!!!! REMIS !!!!')
+        wynik = '!!!! REMIS !!!!'
+        
     app = gui("Symulator Ogame","fullscreen")
-    app.setBg("blue")
+    app.setBg("white")
     app.setFont(10)
+    app.addLabel('WYNIKI : ')
+    app.setLabelBg("WYNIKI : ", "red")
     app.addLabel('flota1 : ')
     app.setLabelBg("flota1 : ", "grey")
     app.addLabel(tmp1.wypisz_ilosc())
     app.addLabel('flota2 : ')
     app.setLabelBg("flota2 : ", "grey")
     app.addLabel(tmp2.wypisz_ilosc() )
+    app.addLabel(wynik)
+    app.setLabelBg( wynik , "red")
+    
     app.go()
 
     
@@ -240,5 +424,5 @@ def symuluj(n , flotaA , flotaB):
     return 0
 
 
-symuluj( 100 , 'flota1.txt' , 'flota2.txt' )
+symuluj( 5 , 'flota1.txt' , 'flota2.txt'  )
     
