@@ -125,23 +125,32 @@ class flota():
         
         for i in self.flota:
             if i.zniszczony() == False:
-                i[2] = dane_statkow.oslona(i[0]) * self.ochronna
+                #print(i)
+                i.oslona = float(dane_statkow.oslona(i.name)) * self.ochronna
                 tmp.append(i)
             else:
-                self.usun(i.name , 1)
-                
+                self.usun(i.name , 1)       
         self.flota = tmp
         
     def atakuj(self , flota_2):
-        for i in self.flota:
-            
-            r = randint(0,len( flota_2.flota ))
-            
-            flota_2.flota[r].trafiony(i)
-            
-            while i.strzel( flota_2.flota[ r ] ):
-                r = randint(0,len( flota_2.flota ))
+        if len( self.flota ) > 0  and len( flota_2.flota ) > 0:  
+            for i in self.flota:
+                
+                r = randint(0,len( flota_2.flota )-1)
+                
                 flota_2.flota[r].trafiony(i)
+                
+                while i.strzel( flota_2.flota[ r ] ):
+                    r = randint(0,len( flota_2.flota )-1)
+                    flota_2.flota[r].trafiony(i)
+        else:
+            return False
+        
+    def istnieje(self):
+        if len(self.flota) > 0 :
+            return True
+        else:
+            return False
             
     def wypisz_ilosc(self):
         print('male transportery: ' + str(self.mt) + 

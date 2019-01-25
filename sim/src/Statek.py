@@ -45,7 +45,7 @@ class statek():
         ''' Funkcja obslugujaca co sie stanie jezeli w statek strzeli statek2'''
         
         if self.oslona > 0:
-            if ( statek2.atak / self.oslona) < 0.1:
+            if ( statek2.atak / self.oslona) < 0.01:
                 return False #statek2 nie trafil
         
         obrazenia = statek2.atak
@@ -79,7 +79,9 @@ class statek():
         
     def statystyki(self):
         ''' funkcja wypisujaca statystyki statku '''
-        print("nazwa:" + self.name + " pancerz:" + str(int(self.pancerz)) + " oslona:" + str(int(self.oslona)) + " atak:" + str(int(self.atak)))
+        
+        return("nazwa:" + self.name + " pancerz:" + str(int(self.pancerz)) + " oslona:" + str(int(self.oslona)) + " atak:" + str(int(self.atak)))
+        
              
         
         
