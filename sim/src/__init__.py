@@ -417,9 +417,6 @@ def symuluj(n , flotaA , flotaB ):
     app.go()
 
     
-    print(tmp1.wypisz_ilosc())
-    print('----------------------------')
-    print(tmp2.wypisz_ilosc())          
         
     return 0
 
