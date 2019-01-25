@@ -196,7 +196,7 @@ class flota():
             return False
             
     def wypisz_ilosc(self):
-        print('male transportery: ' + str(self.mt) + 
+        return('male transportery: ' + str(self.mt) + 
               '\nduze transportery: ' + str(self.dt) +
               '\nlekkie mysliwce: ' + str(self.lm) +
               '\nciezkie mysliwce: ' + str(self.cm) +

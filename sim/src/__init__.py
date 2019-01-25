@@ -4,18 +4,20 @@ from Flota import flota
 from random import randint
 from appJar import gui
 
+
+
+
+app = gui("Symulator Ogame","fullscreen")
+#app.setSize(600,800)
+app.setBg("blue")
+app.setFont(10)
+
 def press(button):
     if button == "wyjdz":
         app.stop()
     else:
         usr = app.getEntry("Username")
         pwd = app.getEntry("Password")
-        print("User:", usr, "Pass:", pwd)
-
-app = gui("Symulator Ogame","fullscreen")
-#app.setSize(600,800)
-app.setBg("blue")
-app.setFont(10)
 
 #app.addLabel("title", "Welcome to appJar")
 #app.setLabelBg("title", "red")
@@ -59,7 +61,7 @@ app.addLabelEntry("gwiazda smierci.")
 app.addLabelEntry("pancernik.")
 
 
-app.addButtons(["Submit", "wyjdz"], press)
+app.addButtons(["symuluj", "wyjdz"], press)
 
 
 
@@ -153,6 +155,13 @@ def symuluj(n , flotaA , flotaB):
     
     else:
         print('!!!! REMIS !!!!')
+    app = gui("Symulator Ogame","fullscreen")
+    app.setBg("blue")
+    app.setFont(10)
+    app.addLabel(tmp1.wypisz_ilosc())
+    app.addLabel(tmp2.wypisz_ilosc() )
+    app.go()
+
     
     tmp1.wypisz_ilosc()
     print('----------------------------')
