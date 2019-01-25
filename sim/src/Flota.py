@@ -39,44 +39,46 @@ class flota():
         
         self.flota = []
         
+    def stworz(self):
+        
         for i in range(0,self.mt):
-            self.flota.append(statek( dane_statkow.mt , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.mt , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.dt):
-            self.flota.append(statek( dane_statkow.dt , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.dt , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.lm):
-            self.flota.append(statek( dane_statkow.lm , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.lm , self.ochronna , self.opancerzenie , self.ojowa ))
         
         for i in range(0,self.cm):
-            self.flota.append(statek( dane_statkow.cm , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.cm , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.kr):
-            self.flota.append(statek( dane_statkow.kr  , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.kr  , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.ow):
-            self.flota.append(statek( dane_statkow.ow  , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.ow  , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.sk):
-            self.flota.append(statek( dane_statkow.sk  , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.sk  , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.re):
-            self.flota.append(statek( dane_statkow.re  , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.re  , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.ss):
-            self.flota.append(statek( dane_statkow.ss  , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.ss  , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.bb):
-            self.flota.append(statek( dane_statkow.bb  , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.bb  , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.ns):
-            self.flota.append(statek( dane_statkow.ns  , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.ns  , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.gs):
-            self.flota.append(statek( dane_statkow.gs , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.gs , self.ochronna , self.opancerzenie , self.bojowa ))
             
         for i in range(0,self.pa):
-            self.flota.append(statek( dane_statkow.pa , ochronna , opancerzenie , bojowa ))
+            self.flota.append(statek( dane_statkow.pa , self.ochronna , self.opancerzenie , self.bojowa ))
         
         
     def usun(self , nazwa , n ):
@@ -119,7 +121,48 @@ class flota():
             
         elif nazwa == 'pa':
             self.pa -= n
+           
+    def dadaj(self , nazwa , n ):
             
+            if nazwa == 'mt':
+                self.mt += n
+                
+            elif nazwa == 'dt':
+                self.dt += n
+                
+            elif nazwa == 'lm':
+                self.lm += n
+                
+            elif nazwa == 'cm':
+                self.cm += n
+                
+            elif nazwa == 'kr':
+                self.kr += n
+                
+            elif nazwa == 'ow':
+                self.ow += n
+                
+            elif nazwa == 'sk':
+                self.sk += n
+                
+            elif nazwa == 're':
+                self.re += n
+                
+            elif nazwa == 'ss':
+                self.ss += n
+                
+            elif nazwa == 'bb':
+                self.bb += n
+                
+            elif nazwa == 'ns':
+                self.ns += n
+                
+            elif nazwa == 'gs':
+                self.gs += n
+                
+            elif nazwa == 'pa':
+                self.pa += n
+     
     def wyczysc(self):
         tmp = []
         
