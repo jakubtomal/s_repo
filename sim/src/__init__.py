@@ -3,6 +3,7 @@ from Statek import statek
 from Flota import flota
 from random import randint
 from appJar import gui
+from matplotlib.cbook import Null
 
 
 
@@ -16,56 +17,121 @@ def press(button):
     if button == "wyjdz":
         app.stop()
     else:
-        usr = app.getEntry("Username")
-        pwd = app.getEntry("Password")
+        plik1 = open('flota1.txt' , 'w')
+        plik2 = open('flota2.txt' , 'w')
+    
+        plik1.write('mt:'+app.getEntry("maly transporter")+"\n"+
+                    'dt:'+app.getEntry("duzy transporter")+"\n"+
+                    'lm:'+app.getEntry("lekki mysliwiec")+"\n"+
+                    'cm:'+app.getEntry("ciezki mysliwiec")+"\n"+
+                    'kr:'+app.getEntry("krazowkik")+"\n"+
+                    'ow:'+app.getEntry("okret wojenny")+"\n"+
+                    'sk:'+app.getEntry("statek kolonizacyjny")+"\n"+
+                    're:'+app.getEntry("recykler")+"\n"+
+                    'ss:'+app.getEntry("sada szpiegowska")+"\n"+
+                    'bb:'+app.getEntry("babowiec")+"\n"+
+                    'ns:'+app.getEntry("niszczyciel")+"\n"+
+                    'gs:'+app.getEntry("gwiazda smierci")+"\n"+
+                    'pa:'+app.getEntry("pancernik")+".")
+        plik1.close()
+        
+        plik2.write('mt:'+app.getEntry("maly transporter.")+"\n"+
+                    'dt:'+app.getEntry("duzy transporter.")+"\n"+
+                    'lm:'+app.getEntry("lekki mysliwiec.")+"\n"+
+                    'cm:'+app.getEntry("ciezki mysliwiec.")+"\n"+
+                    'kr:'+app.getEntry("krazowkik.")+"\n"+
+                    'ow:'+app.getEntry("okret wojenny.")+"\n"+
+                    'sk:'+app.getEntry("statek kolonizacyjny.")+"\n"+
+                    're:'+app.getEntry("recykler.")+"\n"+
+                    'ss:'+app.getEntry("sada szpiegowska.")+"\n"+
+                    'bb:'+app.getEntry("babowiec.")+"\n"+
+                    'ns:'+app.getEntry("niszczyciel.")+"\n"+
+                    'gs:'+app.getEntry("gwiazda smierci.")+"\n"+
+                    'pa:'+app.getEntry("pancernik.")+".")
+        
+        plik2.close()
+        
+        app.stop()
 
 #app.addLabel("title", "Welcome to appJar")
 #app.setLabelBg("title", "red")
 app.addLabel("flota1" , "wpisz dane floty pierwszej:")
 app.setLabelBg("flota1", "grey")
-app.addLabelEntry("technologia bojowa")
+app.addLabelEntry("technologia bojowa" )
+app.setEntryDefault("technologia bojowa", "0")
 app.addLabelEntry("opancerzenie")
+app.setEntryDefault("opancerzenie", "0")
 app.addLabelEntry("technologia ochronna")
+app.setEntryDefault("technologia ochronna", "0")
 app.addLabelEntry("maly transporter")
+app.setEntryDefault("maly transporter", "0")
 app.addLabelEntry("duzy transporter")
+app.setEntryDefault("duzy transporter", "0")
 app.addLabelEntry("lekki mysliwiec")
+app.setEntryDefault("lekki mysliwiec", "0")
 app.addLabelEntry("ciezki mysliwiec")
+app.setEntryDefault("ciezki mysliwiec", "0")
 app.addLabelEntry("krazowkik")
+app.setEntryDefault("krazowkik", "0")
 app.addLabelEntry("okret wojenny")
+app.setEntryDefault("okret wojenny", "0")
 app.addLabelEntry("statek kolonizacyjny")
+app.setEntryDefault("statek kolonizacyjny", "0")
 app.addLabelEntry("recykler")
+app.setEntryDefault("recykler", "0")
 app.addLabelEntry("sada szpiegowska")
+app.setEntryDefault("sada szpiegowska", "0")
 app.addLabelEntry("babowiec")
+app.setEntryDefault("babowiec", "0")
 app.addLabelEntry("niszczyciel")
+app.setEntryDefault("niszczyciel", "0")
 app.addLabelEntry("gwiazda smierci")
+app.setEntryDefault("gwiazda smierci", "0")
 app.addLabelEntry("pancernik")
+app.setEntryDefault("pancernik", "0")
 
 
 app.addLabel("flota2" , "wpisz dane floty drugiej:")
 app.setLabelBg("flota2", "grey")
 app.addLabelEntry("technologia bojowa.")
+app.setEntryDefault("technologia bojowa.", "0")
 app.addLabelEntry("opancerzenie.")
+app.setEntryDefault("opancerzenie.", "0")
 app.addLabelEntry("technologia ochronna.")
+app.setEntryDefault("technologia ochronna.", "0")
 app.addLabelEntry("maly transporter.")
+app.setEntryDefault("maly transporter.", "0")
 app.addLabelEntry("duzy transporter.")
+app.setEntryDefault("duzy transporter.", "0")
 app.addLabelEntry("lekki mysliwiec.")
+app.setEntryDefault("lekki mysliwiec.", "0")
 app.addLabelEntry("ciezki mysliwiec.")
+app.setEntryDefault("ciezki mysliwiec.", "0")
 app.addLabelEntry("krazowkik.")
+app.setEntryDefault("krazowkik.", "0")
 app.addLabelEntry("okret wojenny.")
+app.setEntryDefault("okret wojenny.", "0")
 app.addLabelEntry("statek kolonizacyjny.")
+app.setEntryDefault("statek kolonizacyjny.", "0")
 app.addLabelEntry("recykler.")
+app.setEntryDefault("recykler.", "0")
 app.addLabelEntry("sada szpiegowska.")
+app.setEntryDefault("sada szpiegowska.", "0")
 app.addLabelEntry("babowiec.")
+app.setEntryDefault("babowiec.", "0")
 app.addLabelEntry("niszczyciel.")
+app.setEntryDefault("niszczyciel.", "0")
 app.addLabelEntry("gwiazda smierci.")
+app.setEntryDefault("gwiazda smierci.", "0")
 app.addLabelEntry("pancernik.")
+app.setEntryDefault("pancernik.", "0")
 
 
 app.addButtons(["symuluj", "wyjdz"], press)
 
 
-
 app.go()
+
 
 
 
@@ -158,14 +224,18 @@ def symuluj(n , flotaA , flotaB):
     app = gui("Symulator Ogame","fullscreen")
     app.setBg("blue")
     app.setFont(10)
+    app.addLabel('flota1 : ')
+    app.setLabelBg("flota1 : ", "grey")
     app.addLabel(tmp1.wypisz_ilosc())
+    app.addLabel('flota2 : ')
+    app.setLabelBg("flota2 : ", "grey")
     app.addLabel(tmp2.wypisz_ilosc() )
     app.go()
 
     
-    tmp1.wypisz_ilosc()
+    print(tmp1.wypisz_ilosc())
     print('----------------------------')
-    tmp2.wypisz_ilosc()          
+    print(tmp2.wypisz_ilosc())          
         
     return 0
 
