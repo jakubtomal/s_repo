@@ -2,6 +2,68 @@ from Dane_statkow import dane_statkow
 from Statek import statek
 from Flota import flota
 from random import randint
+from appJar import gui
+
+def press(button):
+    if button == "wyjdz":
+        app.stop()
+    else:
+        usr = app.getEntry("Username")
+        pwd = app.getEntry("Password")
+        print("User:", usr, "Pass:", pwd)
+
+app = gui("Symulator Ogame","fullscreen")
+#app.setSize(600,800)
+app.setBg("blue")
+app.setFont(10)
+
+#app.addLabel("title", "Welcome to appJar")
+#app.setLabelBg("title", "red")
+app.addLabel("flota1" , "wpisz dane floty pierwszej:")
+app.setLabelBg("flota1", "grey")
+app.addLabelEntry("technologia bojowa")
+app.addLabelEntry("opancerzenie")
+app.addLabelEntry("technologia ochronna")
+app.addLabelEntry("maly transporter")
+app.addLabelEntry("duzy transporter")
+app.addLabelEntry("lekki mysliwiec")
+app.addLabelEntry("ciezki mysliwiec")
+app.addLabelEntry("krazowkik")
+app.addLabelEntry("okret wojenny")
+app.addLabelEntry("statek kolonizacyjny")
+app.addLabelEntry("recykler")
+app.addLabelEntry("sada szpiegowska")
+app.addLabelEntry("babowiec")
+app.addLabelEntry("niszczyciel")
+app.addLabelEntry("gwiazda smierci")
+app.addLabelEntry("pancernik")
+
+
+app.addLabel("flota2" , "wpisz dane floty drugiej:")
+app.setLabelBg("flota2", "grey")
+app.addLabelEntry("technologia bojowa.")
+app.addLabelEntry("opancerzenie.")
+app.addLabelEntry("technologia ochronna.")
+app.addLabelEntry("maly transporter.")
+app.addLabelEntry("duzy transporter.")
+app.addLabelEntry("lekki mysliwiec.")
+app.addLabelEntry("ciezki mysliwiec.")
+app.addLabelEntry("krazowkik.")
+app.addLabelEntry("okret wojenny.")
+app.addLabelEntry("statek kolonizacyjny.")
+app.addLabelEntry("recykler.")
+app.addLabelEntry("sada szpiegowska.")
+app.addLabelEntry("babowiec.")
+app.addLabelEntry("niszczyciel.")
+app.addLabelEntry("gwiazda smierci.")
+app.addLabelEntry("pancernik.")
+
+
+app.addButtons(["Submit", "wyjdz"], press)
+
+
+
+app.go()
 
 
 
