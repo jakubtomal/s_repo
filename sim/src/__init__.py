@@ -5,6 +5,8 @@ from random import randint
 from appJar import gui
 from matplotlib.cbook import Null
 
+"""glowna czesc programu przeprowadzajaca symulacje i wyswietlacjaca wynik"""
+
 
 
 
@@ -302,6 +304,15 @@ app.go()
 
 
 def symuluj(n , flotaA , flotaB ):
+    """Funkcja sumuluj przeprawadza sama symulacje
+    
+    Args:
+        flotaA (flota): pierwsza flota bioraca udzial w symulacji
+        flotaB (flota): druga flota bioraca udzial w symulacji
+        
+    Returns:
+        int. 0    
+    """
     
     tech1 = open('technologie1' , 'r')
     tech2 = open('technologie2' , 'r')
